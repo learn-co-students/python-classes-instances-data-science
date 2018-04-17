@@ -46,18 +46,15 @@ class Ride:
 
 
 
-So, let's add a block of code to our `Ride` class and see what happens. This new block of code is called an `instance method`. Don't worry too much about instance methods yet -- we'll get to those. For now, just understand that it is a function we define inside a class. Let's check it out below:
+So, let's add a block of code to our `Ride` class and see what happens. Python has a keyword `pass` which we can use in this instance to tell our code to do nothing and continue executing. `pass` can be used in instances like class and function definitions where a block of code is syntatically necessary. Feel free to read more about `pass` [here](https://docs.python.org/2/tutorial/controlflow.html#pass-statements).
 
 
 ```python
 class Ride:
-    
-    def new_instance_method():
-        print("called an instance method")
-
+    pass
 ```
 
-Woo! No error. So, we now we have defined a class and an instance method. Let's try to create an `instance` of the ride class. Again, we can think of these as objects of the `Ride` class that contain information about a single ride.
+Woo! No error. So, we now we have successfully defined our `Ride` class. Let's try to create an `instance` of this class. Again, we can think of these instances as objects of the `Ride` class that contain information about a single ride.
 
 
 ```python
