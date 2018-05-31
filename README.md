@@ -88,7 +88,7 @@ print(first_ride == Ride())
 print(first_ride == first_ride)
 ```
 
-As we can see, `first_ride` is only equal to itself eventhough at this point these objects are identical with the exception of their IDs.
+As we can see, `first_ride` is only equal to itself even though at this point these objects are identical with the exception of their IDs.
 
 ## Summary
 
