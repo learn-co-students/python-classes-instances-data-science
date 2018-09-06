@@ -1,6 +1,9 @@
 
 # Classes and Instances
 
+## Introduction
+In this lesson, we will introduce what class and instance objects are in Python and how to create them. As we know, classes are our way of creating code objects. A Python class can be thought of as the blueprints for creating a code object (or **instance object**). It has both the layout for new objects as well as the ability to create those objects. When we **initialize**, or make a new instance object from a class, we are essentially pressing a button on an assembly line that instantly rolls out a new instance object. For example, if we were dealing with a `Car` class, we would get a brand new car from the assembly line. In cases where we want to create multiple objects, we can see how this functionality would be extremely useful.
+
 ## Objectives
 
 * Describe a class and how it creates objects
@@ -11,19 +14,21 @@
 
 We are very entrepreneurial data scientists and we are starting a ride share business. Let's call it *fuber*. Rides all generally have the same basic information. They have a driver, passenger(s), origin, destination, car information, and price. We plan on having a pretty large client base, so, we could imagine having many rides being taken every day.
 
- So, we will need to have a way to bundle up and operate on all the information we mentioned earlier about a particular ride. And as we said, our business is going to really take off, so, we are going to need to create rides over and over.
+So, we will need to have a way to bundle up and operate on all the information we mentioned earlier about a particular ride. And as we said, our business is going to really take off, so, we are going to need to create rides over and over.
 
- How can we use Python to help make this process easier? That is where a Python `Class` comes in. We can create a `Ride` class that can produce ride objects, which would bundle all the information and common operations for a particular ride.
+How can we use Python to help make this process easier? We can use Python classes. We can create a `Ride` class that can produce ride instance objects, which would bundle all the information and common operations for a particular ride.
 
- A class can be thought of as the blueprint that defines how to build an object. The `Ride` class is different from an actual ride object just as the blueprints for a house are different from the actual house.
+As we mentioned earlier, a class can be thought of as the blueprints that define how to build an instance object. The `Ride` class is different from an actual ride instance object just as the blueprints for a house are different from the actual house.
 
- A Python class contains both the blueprints for creating new objects as well as the ability to create those objects. When we **initialize**, or make a new instance of a class, we are essentially pressing a button on an assembly line that instantly pops out a new instance object. For example, if we were dealing with a `Car` class, we would get a brand new car from the assembly line, which produces a variety of the same model car.
-
- Here is what our `Ride` class would look like in Python:
+Here is what our `Ride` class would look like in Python:
 
  ```python
  class Ride:
-    # some code to describe a ride
+    # code for distance attribute
+    # code for time attribute
+    # code for price attribute
+    # code to start a ride
+    # code to end a ride
 ```
 
 We can see that we use the keyword `class` to define a Python class, and as we have already learned with functions, Python classes are closed with whitespace. This means that everything that is in the class is indented. To end the class, we simply stop indenting.
@@ -58,9 +63,9 @@ Okay, we ***instantiated*** our first ride! We did this by invoking, or calling 
 
 **Instantiate** means to bring a new object to life (off the assembly line). We instantiated a new ride when we invoked our class, `Ride()`, which made a new ride in our rideshare program.
 
-Each individual object produced from a class is known as an **instance** or instance object. Our variable, `first_ride`, points to an `instance` of the ride class. We can be sure it is an instance of the Ride class by looking at the object we created. Above we printed `first_ride`, and we can see below that it says it is a `Ride object`. So, we know which class it comes from, the `Ride` class, and we know it is an instance since it says it is an `object`. 
+Each individual object produced from a class is known as an **instance** or **instance object**. Our variable, `first_ride`, points to an `instance` of the ride class. We can be sure it is an instance of the Ride class by looking at the object we created. Above we printed `first_ride`, and we can see that it says it is a `Ride object`. This tells us not only which class it comes from, the `Ride` class, but also that it is an instance since it says `object`. 
 
-We can even see this more clearly by printing both the class and an instance of that class:
+We can see this distinction more clearly by printing both the class and an instance of that class next to one another:
 
 
 ```python
@@ -79,17 +84,17 @@ print(second_ride)
 print(third_ride)
 ```
 
-Three rides! Alright, let's look at these. They seem pretty much the same, except the funny numbers at the end. Those are the IDs which represent a place in memory where the computer stores these objects. Additionally, since the IDs are unique, this means that these are completely unique objects although they are all borne from the `Ride` class. We can clearly demonstrate this by comparing these objects below:
+Three rides! Alright, let's look at these. They seem pretty much the same, except the funny numbers at the end. Those are the IDs which represent a place in memory where the computer stores these objects. Additionally, since the IDs are unique, this means that each instance object is a **completely unique object** although they are all borne from the same `Ride` class. We can prove this by comparing the objects below:
 
 
 ```python
+print(first_ride is second_ride)
 print(first_ride == second_ride)
-print(first_ride == Ride())
-print(first_ride == first_ride)
+print(first_ride is first_ride)
 ```
 
-As we can see, `first_ride` is only equal to itself even though at this point these objects are identical with the exception of their IDs.
+As we can see, `first_ride` is only equal to itself even though at this point these objects all have identical attributes and methods (or lack thereof) with the exception of their IDs in our computer's memory.
 
 ## Summary
 
-In this lesson we learned about what we use classes for and how to define them. They are the blueprints for all objects borne from that class and they allow us to create instances, which are objects produced from a class with unique IDs.
+In this lesson we learned about what we use classes for and how to define them. They are the blueprints for creating instance objects and they allow us to create instance objects with the same or similar attributes and methods. However, all instance objects are produced with unique IDs, making them unique objects.
